@@ -30,7 +30,6 @@ node {
     						.logFile.text
                 // copy the log in the job's own workspace
                 writeFile file: "buildlog.txt", text: logContent
-			}
         }
     } catch (err) {
         currentBuild.result = 'FAILED'
