@@ -29,7 +29,7 @@ node {
     						.getBuildByNumber(Integer.parseInt(env.BUILD_NUMBER))
     						.logFile.text
                 // copy the log in the job's own workspace
-                writeFile file: job_env.JOB_NAME_build_env.BUILDNUMBER_log.txt", text: logContent
+                writeFile file: "job_"+env.JOB_NAME+"_build_"+env.BUILDNUMBER+"_log.txt", text: logContent
         }
     } catch (err) {
         currentBuild.result = 'FAILED'
